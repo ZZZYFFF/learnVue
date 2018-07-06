@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>012组件通信</title>
+</head>
+<body>
+    <div id="app">
+        <my-div message="今天要下雨" imgsrc="img/adv01.jpg"></my-div>
+        <my-div message="明天要下雪" imgsrc="img/adv02.jpg"></my-div>
+    </div>
+    <my-div></my-div>
+    <template id="my_div">
+        <div>
+            <h1>{{message}}</h1>
+            <img :src="imgsrc" alt="" width="200">
+        </div>
+    </template>
+    <script src="js/vue.js"></script>
+     <script>
+
+         //1.创建组件
+         Vue.component('my-div',{
+             template:'#my_div',
+             props:['message','imgsrc']
+         });
+
+
+
+         new Vue({
+             el:'#app',
+             data:{
+                 msg:''
+             }
+         });
+
+    </script>
+</body>
+</html>

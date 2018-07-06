@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>011data</title>
+</head>
+<body>
+    <div id="app">
+        <my_btn></my_btn>
+        <my_btn></my_btn>
+        <my_btn></my_btn>
+        <my_btn></my_btn>
+        <my_btn></my_btn>
+    </div>
+
+    <template id="my_btn">
+        <button @click="counter +=1">点击的次数：{{counter}}</button>
+    </template>
+    <script src="js/vue.js"></script>
+     <script>
+
+         // let data = {
+         //     counter:0
+         // };                     会被共享
+
+
+         Vue.component('my_btn',{
+             template:'#my_btn',
+             data(){
+                 return{
+                     counter:0
+                 }
+             }
+         });
+
+         new Vue({
+             el:'#app',
+
+         });
+
+    </script>
+</body>
+</html>

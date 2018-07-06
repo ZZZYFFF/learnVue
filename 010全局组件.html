@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>010全局组件</title>
+</head>
+<body>
+    <div id="app">
+    <my-data></my-data>
+    </div>
+    <div id="app1">
+        <my-data></my-data>
+    </div>
+    <script src="js/vue.js"></script>
+     <script>
+         //1.创建组件构造器
+
+         //2.注册全局组件
+         Vue.component('my-data',{
+             //1.1模板选项
+             template:`
+             <div>
+                <input type="data">
+                <p>今天已经是冬天了！</p>
+             </div>
+             `
+         });
+
+
+         new Vue({
+             el:'#app',
+             data:{
+                 msg:'今天天气很好'
+             }
+         });
+         new Vue({
+             el:'#app1',
+             data:{
+                 msg:'今天天气很好'
+             }
+         });
+
+    </script>
+</body>
+</html>
